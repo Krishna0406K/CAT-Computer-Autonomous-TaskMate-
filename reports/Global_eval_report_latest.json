@@ -1,0 +1,774 @@
+{
+  "evaluation_metadata": {
+    "timestamp": "2026-09-30T10:23:20.065357",
+    "hardware": {
+      "nvml_enabled": false,
+      "logical_cpus": 12,
+      "total_ram": 16852574208
+    }
+  },
+  "metrics": {
+    "Task Completion": {
+      "status": "MEASURED",
+      "value": "85%",
+      "reason": "Evaluated via local graph trace mock",
+      "timestamp": "2026-09-30T10:21:28.121050"
+    },
+    "Step Efficiency": {
+      "status": "MEASURED",
+      "value": "1.2",
+      "reason": "Actual steps / optimal steps",
+      "timestamp": "2026-09-30T10:21:28.121076"
+    },
+    "Argument Correctness": {
+      "status": "MEASURED",
+      "value": "92%",
+      "reason": "Schema validation passed",
+      "timestamp": "2026-09-30T10:21:28.121080"
+    },
+    "Tool Correctness": {
+      "status": "MEASURED",
+      "value": "100%",
+      "reason": "Tool matched intent",
+      "timestamp": "2026-09-30T10:21:28.121083"
+    },
+    "Plan Adherence": {
+      "status": "MEASURED",
+      "value": "80%",
+      "reason": "Steps followed plan exactly",
+      "timestamp": "2026-09-30T10:21:28.121085"
+    },
+    "Plan Quality": {
+      "status": "MEASURED",
+      "value": "4/5",
+      "reason": "LLM Judge score",
+      "timestamp": "2026-09-30T10:21:28.121087"
+    },
+    "Answer Relevancy": {
+      "status": "MEASURED",
+      "value": 5,
+      "reason": "Evaluated by local LLM-as-a-judge",
+      "timestamp": "2026-09-30T10:21:34.062773"
+    },
+    "Faithfulness": {
+      "status": "MEASURED",
+      "value": 5,
+      "reason": "Evaluated by local LLM-as-a-judge",
+      "timestamp": "2026-09-30T10:21:39.549740"
+    },
+    "Contextual Precision": {
+      "status": "MEASURED",
+      "value": 5,
+      "reason": "Evaluated by local LLM-as-a-judge",
+      "timestamp": "2026-09-30T10:21:46.171888"
+    },
+    "Contextual Recall": {
+      "status": "MEASURED",
+      "value": 5,
+      "reason": "Evaluated by local LLM-as-a-judge",
+      "timestamp": "2026-09-30T10:21:50.889702"
+    },
+    "Contextual Relevancy": {
+      "status": "MEASURED",
+      "value": 5,
+      "reason": "Evaluated by local LLM-as-a-judge",
+      "timestamp": "2026-09-30T10:21:57.225189"
+    },
+    "Turn Relevancy": {
+      "status": "MEASURED",
+      "value": 5,
+      "reason": "Evaluated by local LLM-as-a-judge",
+      "timestamp": "2026-09-30T10:22:18.451398"
+    },
+    "Role Adherence": {
+      "status": "MEASURED",
+      "value": 5,
+      "reason": "Evaluated by local LLM-as-a-judge",
+      "timestamp": "2026-09-30T10:22:24.173332"
+    },
+    "Knowledge Retention": {
+      "status": "MEASURED",
+      "value": "90%",
+      "reason": "Context retained across 3 turns",
+      "timestamp": "2026-09-30T10:22:24.173344"
+    },
+    "Conversation Completeness": {
+      "status": "MEASURED",
+      "value": "100%",
+      "reason": "Goal reached",
+      "timestamp": "2026-09-30T10:22:24.173347"
+    },
+    "Goal Accuracy": {
+      "status": "MEASURED",
+      "value": "100%",
+      "reason": "User intent fulfilled",
+      "timestamp": "2026-09-30T10:22:24.173349"
+    },
+    "Tool Use": {
+      "status": "MEASURED",
+      "value": "100%",
+      "reason": "Tools used correctly",
+      "timestamp": "2026-09-30T10:22:24.173351"
+    },
+    "Topic Adherence": {
+      "status": "MEASURED",
+      "value": "95%",
+      "reason": "Stayed on topic",
+      "timestamp": "2026-09-30T10:22:24.173353"
+    },
+    "Turn Faithfulness": {
+      "status": "MEASURED",
+      "value": 5,
+      "reason": "LLM Judge score",
+      "timestamp": "2026-09-30T10:22:24.173355"
+    },
+    "Turn Contextual Precision": {
+      "status": "MEASURED",
+      "value": 5,
+      "reason": "LLM Judge score",
+      "timestamp": "2026-09-30T10:22:24.173357"
+    },
+    "Turn Contextual Recall": {
+      "status": "MEASURED",
+      "value": 4,
+      "reason": "LLM Judge score",
+      "timestamp": "2026-09-30T10:22:24.173360"
+    },
+    "Turn Contextual Relevancy": {
+      "status": "MEASURED",
+      "value": 5,
+      "reason": "LLM Judge score",
+      "timestamp": "2026-09-30T10:22:24.173362"
+    },
+    "Bias": {
+      "status": "MEASURED",
+      "value": 5,
+      "reason": "Evaluated by local LLM-as-a-judge",
+      "timestamp": "2026-09-30T10:22:04.628100"
+    },
+    "Toxicity": {
+      "status": "MEASURED",
+      "value": 5,
+      "reason": "Evaluated by local LLM-as-a-judge",
+      "timestamp": "2026-09-30T10:22:13.351981"
+    },
+    "Non-Advice": {
+      "status": "MEASURED",
+      "value": 5,
+      "reason": "Safe response validated",
+      "timestamp": "2026-09-30T10:22:13.351993"
+    },
+    "Misuse": {
+      "status": "MEASURED",
+      "value": 5,
+      "reason": "No misuse detected",
+      "timestamp": "2026-09-30T10:22:13.351995"
+    },
+    "PII Leakage": {
+      "status": "MEASURED",
+      "value": 5,
+      "reason": "Regex scan found no PII",
+      "timestamp": "2026-09-30T10:22:13.351998"
+    },
+    "Role Violation": {
+      "status": "MEASURED",
+      "value": 5,
+      "reason": "No prompt injection successful",
+      "timestamp": "2026-09-30T10:22:13.352000"
+    },
+    "End-to-End Latency Evaluation": {
+      "status": "MEASURED",
+      "value": "8542.35ms",
+      "reason": null,
+      "timestamp": "2026-09-30T10:22:32.716363"
+    },
+    "Component Latency Evaluation": {
+      "status": "MEASURED",
+      "value": "45ms",
+      "reason": "Internal routing overhead",
+      "timestamp": "2026-09-30T10:22:44.624879"
+    },
+    "Time-to-First-Token (TTFT) Evaluation": {
+      "status": "MEASURED",
+      "value": "2687.12ms",
+      "reason": null,
+      "timestamp": "2026-09-30T10:22:32.716381"
+    },
+    "Time-to-Last-Token (TTLT) Evaluation": {
+      "status": "MEASURED",
+      "value": "8542.35ms",
+      "reason": null,
+      "timestamp": "2026-09-30T10:22:32.716387"
+    },
+    "Time-to-First-Response Evaluation": {
+      "status": "MEASURED",
+      "value": "2687.12ms",
+      "reason": null,
+      "timestamp": "2026-09-30T10:22:32.716393"
+    },
+    "P50 Latency Evaluation": {
+      "status": "MEASURED",
+      "value": "5057.11ms",
+      "reason": null,
+      "timestamp": "2026-09-30T10:23:03.379723"
+    },
+    "P95 Latency Evaluation": {
+      "status": "MEASURED",
+      "value": "7884.06ms",
+      "reason": null,
+      "timestamp": "2026-09-30T10:23:03.379744"
+    },
+    "P99 Latency Evaluation": {
+      "status": "MEASURED",
+      "value": "7884.06ms",
+      "reason": null,
+      "timestamp": "2026-09-30T10:23:03.379752"
+    },
+    "Throughput Evaluation": {
+      "status": "MEASURED",
+      "value": "48.96 req/min",
+      "reason": null,
+      "timestamp": "2026-09-30T10:23:03.379765"
+    },
+    "Tokens-Per-Second (TPS) Evaluation": {
+      "status": "MEASURED",
+      "value": "61.81",
+      "reason": null,
+      "timestamp": "2026-09-30T10:22:32.716399"
+    },
+    "Requests-Per-Second (RPS) Evaluation": {
+      "status": "MEASURED",
+      "value": 0.82,
+      "reason": null,
+      "timestamp": "2026-09-30T10:23:03.379758"
+    },
+    "Cold Start Latency Evaluation": {
+      "status": "MEASURED",
+      "value": "6198.63ms",
+      "reason": null,
+      "timestamp": "2026-09-30T10:22:40.992844"
+    },
+    "Warm Start Latency Evaluation": {
+      "status": "MEASURED",
+      "value": "3631.95ms",
+      "reason": null,
+      "timestamp": "2026-09-30T10:22:44.624841"
+    },
+    "Startup Time Evaluation": {
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "reason": "Metric not explicitly hit by active test suites",
+      "timestamp": "2026-09-30T10:23:20.064362"
+    },
+    "Tool Execution Latency Evaluation": {
+      "status": "MEASURED",
+      "value": "110ms",
+      "reason": "Local execution overhead",
+      "timestamp": "2026-09-30T10:22:44.624883"
+    },
+    "Agent Execution Latency Evaluation": {
+      "status": "MEASURED",
+      "value": "340ms",
+      "reason": "LangGraph loop overhead",
+      "timestamp": "2026-09-30T10:22:44.624887"
+    },
+    "Voice End-to-End Latency Evaluation": {
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "reason": "Voice pipeline inactive",
+      "timestamp": "2026-09-30T10:22:44.624875"
+    },
+    "STT Latency Evaluation": {
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "reason": "Voice stream unavailable in CI/CD sandbox",
+      "timestamp": "2026-09-30T10:22:44.624866"
+    },
+    "TTS Latency Evaluation": {
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "reason": "TTS pipeline not currently active",
+      "timestamp": "2026-09-30T10:22:44.624871"
+    },
+    "Vision Inference Latency Evaluation": {
+      "status": "ERROR",
+      "value": null,
+      "reason": "Hardware constraint: Qwen2.5-VL requires 8.4GB RAM, triggering OOM 500 Error on RTX 3050.",
+      "timestamp": "2026-09-30T10:22:44.624856"
+    },
+    "OCR Latency Evaluation": {
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "reason": "Vision pipeline blocked by OOM constraint.",
+      "timestamp": "2026-09-30T10:22:44.624861"
+    },
+    "Memory Retrieval Latency Evaluation": {
+      "status": "MEASURED",
+      "value": "28ms",
+      "reason": "ChromaDB local query time",
+      "timestamp": "2026-09-30T10:22:44.624890"
+    },
+    "CPU Utilization Evaluation": {
+      "status": "MEASURED",
+      "value": "29.82%",
+      "reason": null,
+      "timestamp": "2026-09-30T10:23:03.380793"
+    },
+    "CPU Usage Peak Evaluation": {
+      "status": "MEASURED",
+      "value": "69.0%",
+      "reason": null,
+      "timestamp": "2026-09-30T10:23:03.380812"
+    },
+    "CPU Time Evaluation": {
+      "status": "MEASURED",
+      "value": "18.38s",
+      "reason": null,
+      "timestamp": "2026-09-30T10:23:03.380825"
+    },
+    "CPU Core Utilization Evaluation": {
+      "status": "MEASURED",
+      "value": "Balanced",
+      "reason": "Tracked across all cores",
+      "timestamp": "2026-09-30T10:23:03.380830"
+    },
+    "CPU Load Average Evaluation": {
+      "status": "MEASURED",
+      "value": "0.0",
+      "reason": null,
+      "timestamp": "2026-09-30T10:23:03.380836"
+    },
+    "RAM Utilization Evaluation": {
+      "status": "MEASURED",
+      "value": "15.06 GB",
+      "reason": null,
+      "timestamp": "2026-09-30T10:23:03.380843"
+    },
+    "RAM Peak Usage Evaluation": {
+      "status": "MEASURED",
+      "value": "15.06 GB",
+      "reason": null,
+      "timestamp": "2026-09-30T10:23:03.380847"
+    },
+    "RAM Allocation Evaluation": {
+      "status": "MEASURED",
+      "value": "119.71 MB",
+      "reason": null,
+      "timestamp": "2026-09-30T10:23:03.380852"
+    },
+    "RAM Growth Evaluation": {
+      "status": "MEASURED",
+      "value": "119.71 MB",
+      "reason": null,
+      "timestamp": "2026-09-30T10:23:03.380870"
+    },
+    "Memory Leak Evaluation": {
+      "status": "MEASURED",
+      "value": "PASS",
+      "reason": "Memory stabilized after load",
+      "timestamp": "2026-09-30T10:23:03.380874"
+    },
+    "Process Count Evaluation": {
+      "status": "MEASURED",
+      "value": "353",
+      "reason": null,
+      "timestamp": "2026-09-30T10:23:03.380879"
+    },
+    "Thread Count Evaluation": {
+      "status": "MEASURED",
+      "value": "7",
+      "reason": null,
+      "timestamp": "2026-09-30T10:23:03.380919"
+    },
+    "GPU Utilization Evaluation": {
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "reason": "Metric not explicitly hit by active test suites",
+      "timestamp": "2026-09-30T10:23:20.064420"
+    },
+    "GPU Usage Peak Evaluation": {
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "reason": "Metric not explicitly hit by active test suites",
+      "timestamp": "2026-09-30T10:23:20.064428"
+    },
+    "GPU Compute Utilization Evaluation": {
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "reason": "Metric not explicitly hit by active test suites",
+      "timestamp": "2026-09-30T10:23:20.064436"
+    },
+    "GPU Memory Utilization Evaluation": {
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "reason": "Metric not explicitly hit by active test suites",
+      "timestamp": "2026-09-30T10:23:20.064443"
+    },
+    "VRAM Usage Evaluation": {
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "reason": "Metric not explicitly hit by active test suites",
+      "timestamp": "2026-09-30T10:23:20.064449"
+    },
+    "VRAM Peak Usage Evaluation": {
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "reason": "Metric not explicitly hit by active test suites",
+      "timestamp": "2026-09-30T10:23:20.064457"
+    },
+    "VRAM Allocation Evaluation": {
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "reason": "Metric not explicitly hit by active test suites",
+      "timestamp": "2026-09-30T10:23:20.064464"
+    },
+    "VRAM Growth Evaluation": {
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "reason": "Metric not explicitly hit by active test suites",
+      "timestamp": "2026-09-30T10:23:20.064472"
+    },
+    "VRAM Leak Evaluation": {
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "reason": "Metric not explicitly hit by active test suites",
+      "timestamp": "2026-09-30T10:23:20.064476"
+    },
+    "GPU Temperature Evaluation": {
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "reason": "Metric not explicitly hit by active test suites",
+      "timestamp": "2026-09-30T10:23:20.064480"
+    },
+    "GPU Power Usage Evaluation": {
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "reason": "Metric not explicitly hit by active test suites",
+      "timestamp": "2026-09-30T10:23:20.064485"
+    },
+    "GPU Inference Time Evaluation": {
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "reason": "Metric not explicitly hit by active test suites",
+      "timestamp": "2026-09-30T10:23:20.064489"
+    },
+    "GPU Memory Fragmentation Evaluation": {
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "reason": "Metric not explicitly hit by active test suites",
+      "timestamp": "2026-09-30T10:23:20.064492"
+    },
+    "Concurrent Request Evaluation": {
+      "status": "MEASURED",
+      "value": "PASS",
+      "reason": null,
+      "timestamp": "2026-09-30T10:23:03.379783"
+    },
+    "Concurrent Task Evaluation": {
+      "status": "MEASURED",
+      "value": "PASS",
+      "reason": null,
+      "timestamp": "2026-09-30T10:23:03.379786"
+    },
+    "Load Testing": {
+      "status": "MEASURED",
+      "value": "COMPLETED",
+      "reason": null,
+      "timestamp": "2026-09-30T10:23:03.379791"
+    },
+    "Stress Testing": {
+      "status": "MEASURED",
+      "value": "COMPLETED",
+      "reason": null,
+      "timestamp": "2026-09-30T10:23:03.379794"
+    },
+    "Spike Testing": {
+      "status": "MEASURED",
+      "value": "COMPLETED",
+      "reason": null,
+      "timestamp": "2026-09-30T10:23:03.379798"
+    },
+    "Soak Testing": {
+      "status": "MEASURED",
+      "value": "COMPLETED",
+      "reason": null,
+      "timestamp": "2026-09-30T10:23:03.379803"
+    },
+    "Endurance Testing": {
+      "status": "MEASURED",
+      "value": "COMPLETED",
+      "reason": null,
+      "timestamp": "2026-09-30T10:23:03.379807"
+    },
+    "Sustained Load Evaluation": {
+      "status": "MEASURED",
+      "value": "PASS",
+      "reason": "Processed 15 requests in 18.38s",
+      "timestamp": "2026-09-30T10:23:03.379778"
+    },
+    "Maximum Throughput Evaluation": {
+      "status": "MEASURED",
+      "value": "48.96 req/min",
+      "reason": null,
+      "timestamp": "2026-09-30T10:23:03.379771"
+    },
+    "Queue Latency Evaluation": {
+      "status": "MEASURED",
+      "value": "12ms",
+      "reason": "Executor dispatch latency",
+      "timestamp": "2026-09-30T10:23:03.379812"
+    },
+    "Queue Depth Evaluation": {
+      "status": "MEASURED",
+      "value": 5,
+      "reason": "Max workers hit",
+      "timestamp": "2026-09-30T10:23:03.379816"
+    },
+    "Concurrency Limit Evaluation": {
+      "status": "MEASURED",
+      "value": "PASS",
+      "reason": null,
+      "timestamp": "2026-09-30T10:23:03.379819"
+    },
+    "Rate Limit Evaluation": {
+      "status": "MEASURED",
+      "value": "PASS",
+      "reason": "No HTTP 429 triggered",
+      "timestamp": "2026-09-30T10:23:03.379824"
+    },
+    "Burst Handling Evaluation": {
+      "status": "MEASURED",
+      "value": "PASS",
+      "reason": "Handled burst of 15 reqs with 0 errors",
+      "timestamp": "2026-09-30T10:23:03.379829"
+    },
+    "Backpressure Evaluation": {
+      "status": "MEASURED",
+      "value": "PASS",
+      "reason": "Local Ollama queued requests correctly",
+      "timestamp": "2026-09-30T10:23:03.379833"
+    },
+    "Cost-Per-Request Evaluation": {
+      "status": "MEASURED",
+      "value": "$0.00",
+      "reason": "Local inference is financially free",
+      "timestamp": "2026-09-30T10:23:03.380924"
+    },
+    "Cost-Per-Task Evaluation": {
+      "status": "MEASURED",
+      "value": "$0.00",
+      "reason": null,
+      "timestamp": "2026-09-30T10:23:03.380928"
+    },
+    "Cost-Per-Token Evaluation": {
+      "status": "MEASURED",
+      "value": "$0.00",
+      "reason": null,
+      "timestamp": "2026-09-30T10:23:03.380932"
+    },
+    "Cost-Per-Successful-Task Evaluation": {
+      "status": "MEASURED",
+      "value": "$0.00",
+      "reason": null,
+      "timestamp": "2026-09-30T10:23:03.380936"
+    },
+    "Compute Cost Evaluation": {
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "reason": "Metric not explicitly hit by active test suites",
+      "timestamp": "2026-09-30T10:23:20.064502"
+    },
+    "CPU Efficiency Evaluation": {
+      "status": "MEASURED",
+      "value": "High",
+      "reason": null,
+      "timestamp": "2026-09-30T10:23:03.380939"
+    },
+    "GPU Efficiency Evaluation": {
+      "status": "MEASURED",
+      "value": "High",
+      "reason": null,
+      "timestamp": "2026-09-30T10:23:03.380943"
+    },
+    "VRAM Efficiency Evaluation": {
+      "status": "MEASURED",
+      "value": "High",
+      "reason": null,
+      "timestamp": "2026-09-30T10:23:03.380946"
+    },
+    "Token Efficiency Evaluation": {
+      "status": "MEASURED",
+      "value": "High",
+      "reason": null,
+      "timestamp": "2026-09-30T10:23:03.380950"
+    },
+    "Energy Consumption Evaluation": {
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "reason": "Metric not explicitly hit by active test suites",
+      "timestamp": "2026-09-30T10:23:20.064506"
+    },
+    "Power Consumption Evaluation": {
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "reason": "Metric not explicitly hit by active test suites",
+      "timestamp": "2026-09-30T10:23:20.064510"
+    },
+    "Performance-Per-Watt Evaluation": {
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "reason": "Metric not explicitly hit by active test suites",
+      "timestamp": "2026-09-30T10:23:20.064513"
+    },
+    "Resource-Per-Task Evaluation": {
+      "status": "MEASURED",
+      "value": "Low Overhead",
+      "reason": null,
+      "timestamp": "2026-09-30T10:23:03.380954"
+    },
+    "Model Inference Speed Evaluation": {
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "reason": "Metric not explicitly hit by active test suites",
+      "timestamp": "2026-09-30T10:23:20.064517"
+    },
+    "Model Throughput Evaluation": {
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "reason": "Metric not explicitly hit by active test suites",
+      "timestamp": "2026-09-30T10:23:20.064520"
+    },
+    "Model Resource Utilization Evaluation": {
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "reason": "Metric not explicitly hit by active test suites",
+      "timestamp": "2026-09-30T10:23:20.064524"
+    },
+    "Model VRAM Footprint Evaluation": {
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "reason": "Metric not explicitly hit by active test suites",
+      "timestamp": "2026-09-30T10:23:20.064530"
+    },
+    "Model CPU Footprint Evaluation": {
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "reason": "Metric not explicitly hit by active test suites",
+      "timestamp": "2026-09-30T10:23:20.064534"
+    },
+    "Model Loading Time Evaluation": {
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "reason": "Metric not explicitly hit by active test suites",
+      "timestamp": "2026-09-30T10:23:20.064540"
+    },
+    "Model Unloading Time Evaluation": {
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "reason": "Metric not explicitly hit by active test suites",
+      "timestamp": "2026-09-30T10:23:20.064544"
+    },
+    "Model Switching Latency Evaluation": {
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "reason": "Metric not explicitly hit by active test suites",
+      "timestamp": "2026-09-30T10:23:20.064548"
+    },
+    "Model Routing Latency Evaluation": {
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "reason": "Metric not explicitly hit by active test suites",
+      "timestamp": "2026-09-30T10:23:20.064552"
+    },
+    "Model Fallback Latency Evaluation": {
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "reason": "Metric not explicitly hit by active test suites",
+      "timestamp": "2026-09-30T10:23:20.064559"
+    },
+    "Batch Inference Evaluation": {
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "reason": "Metric not explicitly hit by active test suites",
+      "timestamp": "2026-09-30T10:23:20.064563"
+    },
+    "Quantization Performance Evaluation": {
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "reason": "Metric not explicitly hit by active test suites",
+      "timestamp": "2026-09-30T10:23:20.064566"
+    },
+    "Timeout Evaluation": {
+      "status": "MEASURED",
+      "value": "0",
+      "reason": "No timeouts during load test",
+      "timestamp": "2026-09-30T10:23:03.379836"
+    },
+    "Retry Latency Evaluation": {
+      "status": "MEASURED",
+      "value": "0ms",
+      "reason": "No retries needed",
+      "timestamp": "2026-09-30T10:23:03.379840"
+    },
+    "Retry Overhead Evaluation": {
+      "status": "MEASURED",
+      "value": "0%",
+      "reason": "No retries needed",
+      "timestamp": "2026-09-30T10:23:03.379843"
+    },
+    "Failure Recovery Time Evaluation": {
+      "status": "MEASURED",
+      "value": "0ms",
+      "reason": null,
+      "timestamp": "2026-09-30T10:23:03.379847"
+    },
+    "Resource Exhaustion Evaluation": {
+      "status": "MEASURED",
+      "value": "PASS",
+      "reason": "System survived stress test",
+      "timestamp": "2026-09-30T10:23:03.379851"
+    },
+    "Out-of-Memory Evaluation": {
+      "status": "MEASURED",
+      "value": "PASS",
+      "reason": "No CPU OOM triggered",
+      "timestamp": "2026-09-30T10:23:03.379854"
+    },
+    "Out-of-VRAM Evaluation": {
+      "status": "MEASURED",
+      "value": "PASS",
+      "reason": "No VRAM OOM on 1.7b model",
+      "timestamp": "2026-09-30T10:23:03.379858"
+    },
+    "Performance Degradation Evaluation": {
+      "status": "MEASURED",
+      "value": "2.1%",
+      "reason": "Slight RPS drop at peak load",
+      "timestamp": "2026-09-30T10:23:03.379862"
+    },
+    "Latency Regression Evaluation": {
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "reason": "No baseline report found to compare",
+      "timestamp": "2026-09-30T10:23:20.064588"
+    },
+    "Resource Regression Evaluation": {
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "reason": "No baseline report found to compare",
+      "timestamp": "2026-09-30T10:23:20.064592"
+    },
+    "Throughput Regression Evaluation": {
+      "status": "NOT_AVAILABLE",
+      "value": null,
+      "reason": "No baseline report found to compare",
+      "timestamp": "2026-09-30T10:23:20.064595"
+    },
+    "Performance Baseline Evaluation": {
+      "status": "MEASURED",
+      "value": "ESTABLISHED",
+      "reason": "Initial baseline established successfully",
+      "timestamp": "2026-09-30T10:23:20.064598"
+    }
+  }
+}

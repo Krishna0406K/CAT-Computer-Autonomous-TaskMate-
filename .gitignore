@@ -1,0 +1,76 @@
+# Environment & Secrets (NEVER COMMIT SENSITIVE API KEYS)
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Node & Frontend (Desktop App)
+node_modules/
+apps/desktop/node_modules/
+apps/desktop/dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Tauri & Rust Build Artifacts
+apps/desktop/src-tauri/target/
+target/
+Cargo.lock
+
+# Local Databases & Persistent RAG Embeddings
+data/cat.db
+data/cat.db-journal
+data/chroma/
+*.sqlite3
+
+# Audio & Temporary Test Files
+*.wav
+temp_*
+tts_output.wav
+
+# Model binaries / weights
+*.onnx
+*.bin
+*.safetensors
+
+# Operating System & IDE Artifacts
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+*.log

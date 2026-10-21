@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CAT Mobile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Flat, solid design - strict avoidance of glassmorphism */
+        body {
+            background-color: #0f172a; /* Slate 900 */
+            color: #f8fafc;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            overflow: hidden; /* Prevent pull-to-refresh on mobile */
+        }
+        
+        .chat-container {
+            height: calc(100vh - 140px);
+            overflow-y: auto;
+            scroll-behavior: smooth;
+        }
+
+        /* Solid shadows, no blur */
+        .solid-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+        }
+
+        .bubble-user {
+            background-color: #3b82f6; /* Solid Blue */
+            color: white;
+            border-radius: 18px 18px 4px 18px;
+        }
+
+        .bubble-bot {
+            background-color: #1e293b; /* Slate 800 */
+            color: #f1f5f9;
+            border-radius: 18px 18px 18px 4px;
+            border: 1px solid #334155;
+        }
+
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
+        
+        .typing-indicator span {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background-color: #94a3b8;
+            border-radius: 50%;
+            margin: 0 2px;
+            animation: bounce 1.4s infinite ease-in-out both;
+        }
+        .typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
+        .typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
+        @keyframes bounce {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="flex flex-col h-screen w-screen">
+
+    <!-- Header -->
+    <header class="bg-slate-800 solid-shadow p-4 flex justify-between items-center z-10 border-b border-slate-700">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center font-bold text-lg">
+                <i class="fa-solid fa-cat"></i>
+            </div>
+            <div>
+                <h1 class="text-xl font-bold leading-tight">CAT Companion</h1>
+                <p class="text-xs text-green-400 font-medium flex items-center gap-1">
+                    <span class="w-2 h-2 rounded-full bg-green-500"></span> Connected Local
+                </p>
+            </div>
+        </div>
+        <button onclick="clearChat()" class="text-slate-400 hover:text-white p-2">
+            <i class="fa-solid fa-trash-can"></i>
+        </button>
+    </header>
+
+    <!-- Chat Area -->
+    <main id="chat-box" class="chat-container p-4 flex flex-col gap-4">
+        <!-- Welcome Message -->
+        <div class="flex flex-col items-start max-w-[85%] self-start">
+            <div class="bubble-bot p-3 solid-shadow text-sm leading-relaxed">
+                Hello! I am connected to your desktop's RTX 3050. How can I help you today?
+            </div>
+        </div>
+    </main>
+
+    <!-- Input Area -->
+    <footer class="bg-slate-800 p-4 border-t border-slate-700 z-10 pb-6">
+        <form id="chat-form" class="flex items-center gap-2">
+            <div class="flex-1 bg-slate-900 rounded-full border border-slate-700 flex items-center px-4 py-1 focus-within:border-blue-500 transition-colors">
+                <input 
+                    type="text" 
+                    id="message-input" 
+                    placeholder="Message CAT..." 
+                    class="bg-transparent text-white w-full py-2 outline-none text-sm"
+                    autocomplete="off"
+                >
+            </div>
+            <button type="submit" class="w-12 h-12 bg-blue-600 hover:bg-blue-500 text-white rounded-full flex items-center justify-center transition-colors solid-shadow flex-shrink-0">
+                <i class="fa-solid fa-paper-plane"></i>
+            </button>
+        </form>
+    </footer>
+
+    <script>
+        const chatBox = document.getElementById('chat-box');
+        const chatForm = document.getElementById('chat-form');
+        const messageInput = document.getElementById('message-input');
+        
+        // Dynamically resolve the backend URL based on how the phone connects to the local IP
+        const BACKEND_URL = window.location.origin;
+
+        function scrollToBottom() {
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        function appendMessage(content, sender) {
+            const div = document.createElement('div');
+            div.className = `flex flex-col max-w-[85%] ${sender === 'user' ? 'self-end items-end' : 'self-start items-start'}`;
+            
+            const innerDiv = document.createElement('div');
+            innerDiv.className = `p-3 text-sm leading-relaxed solid-shadow break-words ${sender === 'user' ? 'bubble-user' : 'bubble-bot'}`;
+            
+            // Basic markdown handling for code and bold
+            let formattedContent = content
+                .replace(/\\n/g, '<br>')
+                .replace(/\\*\\*(.*?)\\*\\*/g, '<strong>$1</strong>')
+                .replace(/`(.*?)`/g, '<code class="bg-slate-900 px-1 rounded text-pink-400">$1</code>');
+                
+            innerDiv.innerHTML = formattedContent;
+            div.appendChild(innerDiv);
+            chatBox.appendChild(div);
+            scrollToBottom();
+        }
+
+        function appendTypingIndicator() {
+            const id = 'typing-' + Date.now();
+            const div = document.createElement('div');
+            div.id = id;
+            div.className = "flex flex-col items-start max-w-[85%] self-start";
+            
+            const innerDiv = document.createElement('div');
+            innerDiv.className = "bubble-bot p-4 solid-shadow typing-indicator";
+            innerDiv.innerHTML = "<span></span><span></span><span></span>";
+            
+            div.appendChild(innerDiv);
+            chatBox.appendChild(div);
+            scrollToBottom();
+            return id;
+        }
+
+        function removeTypingIndicator(id) {
+            const el = document.getElementById(id);
+            if (el) el.remove();
+        }
+
+        function clearChat() {
+            chatBox.innerHTML = `
+                <div class="flex flex-col items-start max-w-[85%] self-start">
+                    <div class="bubble-bot p-3 solid-shadow text-sm leading-relaxed">
+                        Chat cleared. What's next?
+                    </div>
+                </div>
+            `;
+        }
+
+        chatForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const text = messageInput.value.trim();
+            if (!text) return;
+
+            appendMessage(text, 'user');
+            messageInput.value = '';
+            
+            const typingId = appendTypingIndicator();
+
+            try {
+                // Send request to the FastAPI backend
+                const response = await fetch(`${BACKEND_URL}/agent`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ task: text, state: null })
+                });
+
+                removeTypingIndicator(typingId);
+
+                if (!response.ok) throw new Error('Network error');
+                
+                const data = await response.json();
+                if (data.final_response) {
+                    appendMessage(data.final_response, 'bot');
+                } else {
+                    appendMessage("Task executed (no final response).", 'bot');
+                }
+            } catch (error) {
+                removeTypingIndicator(typingId);
+                appendMessage("⚠️ Error connecting to CAT backend. Ensure your phone and PC are on the same Wi-Fi.", 'bot');
+                console.error(error);
+            }
+        });
+        
+        // Setup SSE for Voice Command Mirroring (Optional, but cool!)
+        try {
+            const evtSource = new EventSource(`${BACKEND_URL}/voice_stream`);
+            evtSource.onmessage = function(event) {
+                appendMessage(`🎤 Voice Command: ${event.data}`, 'user');
+            };
+        } catch(e) {
+            console.log("SSE not supported or failed to connect.");
+        }
+    </script>
+</body>
+</html>

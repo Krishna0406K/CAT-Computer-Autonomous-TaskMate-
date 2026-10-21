@@ -1,0 +1,179 @@
+{
+    "recording": true,
+    "current_name": "Music Setup",
+    "steps": [
+        {
+            "name": "search_web",
+            "args": {
+                "query": "yes"
+            }
+        },
+        {
+            "name": "search_web",
+            "args": {
+                "query": "latest Python 3.12 features"
+            }
+        },
+        {
+            "name": "delegate_to_subagent",
+            "args": {
+                "role": "summary_writer",
+                "task": "write a summary about how typing works"
+            }
+        },
+        {
+            "name": "search_web",
+            "args": {
+                "query": "latest Python 3.12 features"
+            }
+        },
+        {
+            "name": "ask_subagent_quick",
+            "args": {
+                "role": "summary_writer",
+                "question": "How does typing work in Python 3.12?"
+            }
+        },
+        {
+            "name": "search_web",
+            "args": {
+                "query": "latest Python 3.12 features"
+            }
+        },
+        {
+            "name": "delegate_to_subagent",
+            "args": {
+                "role": "summary_writer",
+                "task": "write a summary about how typing works"
+            }
+        },
+        {
+            "name": "search_web",
+            "args": {
+                "query": "harness engineering summary"
+            }
+        },
+        {
+            "name": "search_web",
+            "args": {
+                "query": "what is harness engineering summary"
+            }
+        },
+        {
+            "name": "search_web",
+            "args": {
+                "query": "Harness engineering summary"
+            }
+        },
+        {
+            "name": "search_web",
+            "args": {
+                "query": "harness engineering summary"
+            }
+        },
+        {
+            "name": "search_web",
+            "args": {
+                "query": "what is harness engineering and its components"
+            }
+        },
+        {
+            "name": "search_web",
+            "args": {
+                "query": "What is harness engineering"
+            }
+        },
+        {
+            "name": "open_local_app",
+            "args": {
+                "target": "linkedin"
+            }
+        },
+        {
+            "name": "execute_system_command",
+            "args": {
+                "command": "md D:\\Krishna"
+            }
+        },
+        {
+            "name": "open_local_app",
+            "args": {
+                "target": "D:\\Krishna"
+            }
+        },
+        {
+            "name": "analyze_screen",
+            "args": {
+                "prompt": "Capture the screen and extract text"
+            }
+        },
+        {
+            "name": "analyze_screen",
+            "args": {
+                "prompt": "Copy whatever is written on my screen and return me as response here"
+            }
+        },
+        {
+            "name": "analyze_screen",
+            "args": {
+                "prompt": "What is written on the screen?"
+            }
+        },
+        {
+            "name": "open_local_app",
+            "args": {
+                "target": "microsoft word"
+            }
+        },
+        {
+            "name": "open_local_app",
+            "args": {
+                "target": "word"
+            }
+        },
+        {
+            "name": "analyze_screen",
+            "args": {
+                "prompt": "Copy whatever is written on screen"
+            }
+        },
+        {
+            "name": "create_word_document",
+            "args": {
+                "filename": "copied_text.docx",
+                "content": ""
+            }
+        },
+        {
+            "name": "analyze_screen",
+            "args": {
+                "prompt": "Copy the text from the screen"
+            }
+        },
+        {
+            "name": "create_word_document",
+            "args": {
+                "filename": "copied_text.docx",
+                "content": "copied_text"
+            }
+        },
+        {
+            "name": "open_local_app",
+            "args": {
+                "target": "D drive locallu"
+            }
+        },
+        {
+            "name": "open_local_app",
+            "args": {
+                "target": "D drive"
+            }
+        },
+        {
+            "name": "open_local_app",
+            "args": {
+                "target": "personal"
+            }
+        }
+    ]
+}
